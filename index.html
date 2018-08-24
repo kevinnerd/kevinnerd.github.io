@@ -343,7 +343,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-08-24 10:12:38" itemprop="dateModified" datetime="2018-08-24T10:12:38+08:00">2018-08-24</time>
+                <time title="修改时间：2018-08-24 10:20:30" itemprop="dateModified" datetime="2018-08-24T10:20:30+08:00">2018-08-24</time>
               
             
           </span>
@@ -377,50 +377,14 @@
 
       
         
-          
-            <h1 id="开篇词"><a href="#开篇词" class="headerlink" title="开篇词"></a>开篇词</h1><p>个人一直认为，作为一个合格的开发人员，都应该有自己学习成长，积累知识的方式，不管是写一些知识总结，做一些技术分享，还是长期维护一个个人博客，这些都是成长的一种方式，作为自己个人博客站点的第一篇文章，这里就简单分享一下搭建整个博客的过程，其实使用<a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="noopener">Hexo</a>搭建博客非常简单，仅仅需要按照官网的步骤来做，很短时间内就可以搭建好一个个人博客站点。</p>
-<p><strong>Warning</strong>: 所有Hexo操作针对Hexo-3.0版本</p>
-<h2 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h2><p>安装Hexo之前，需要确保电脑中已经安装好如下软件：</p>
-<ul>
-<li><a href="http://nodejs.org/" target="_blank" rel="noopener">Node.js</a></li>
-<li><a href="http://git-scm.com/" target="_blank" rel="noopener">Git</a></li>
-</ul>
-<p>安装上述环境的步骤这里不作说明，可以自行查阅官方文档或相关博客。<br>所有上述环境安装完成后，即可执行下面命令安装Hexo</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
-<h2 id="博客搭建"><a href="#博客搭建" class="headerlink" title="博客搭建"></a>博客搭建</h2><h3 id="1-初始化"><a href="#1-初始化" class="headerlink" title="1. 初始化"></a>1. 初始化</h3><p>Hexo安装完成之后，需要初始化一个文件夹作为Hexo的工作目录，并使用npm安装Hexo的依赖模块。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo init &lt;folder&gt;</span><br><span class="line">cd &lt;folder&gt;</span><br><span class="line">npm install</span><br></pre></td></tr></table></figure>
-<p>上面步骤执行完之后，初始化的目录结构如下：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">.</span><br><span class="line">├── _config.yml</span><br><span class="line">├── package.json</span><br><span class="line">├── scaffolds</span><br><span class="line">├── source</span><br><span class="line">|   ├── _drafts</span><br><span class="line">|   └── _posts</span><br><span class="line">└── themes</span><br></pre></td></tr></table></figure>
-<h3 id="2-选择主题"><a href="#2-选择主题" class="headerlink" title="2. 选择主题"></a>2. 选择主题</h3><p>Hexo目录初始化完成之后，就可以挑选自己喜欢的主题，有精力的同学也可以选择自己创建主题，我这里使用的主题是<a href="https://github.com/theme-next/hexo-theme-next" target="_blank" rel="noopener">NexT</a>，这是一款给人感觉很简约的博客主题，当然你也可以在Hexo的<a href="https://hexo.io/themes/" target="_blank" rel="noopener">主题库</a>中选择符合自己风格的主题。</p>
-<p>首先从github上将NexT主题<code>clone</code>到<code>themes</code>目录下</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/theme-next/hexo-theme-next themes/next</span><br></pre></td></tr></table></figure>
-<p>主题下载完成之后，在_config.yml文件中，将theme的配置项更改为next：</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 编辑器中搜索 theme</span></span><br><span class="line"><span class="attr">theme:</span> <span class="string">next</span></span><br></pre></td></tr></table></figure>
-<h3 id="3-创建博客文章"><a href="#3-创建博客文章" class="headerlink" title="3. 创建博客文章"></a>3. 创建博客文章</h3><p>搭建博客最主要的目的就是为了写文章，使用Hexo创建博客非常简单，只需要执行如下命令：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new [layout] &lt;title&gt;</span><br></pre></td></tr></table></figure>
-<p><code>layout</code>参数默认为<code>post</code>，详细的关于<code>layout</code>的设置可以移步<a href="https://hexo.io/zh-cn/docs/writing" target="_blank" rel="noopener">Hexo官网</a>，这里为了演示，就以最简单的方式创建一个示例文章：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new hello_hexo.md</span><br></pre></td></tr></table></figure>
-<p>此时，刚刚创建的<code>hello_hexo.md</code>会保存在 <code>source/_posts</code> 这个目录下，我们可以在这个目录下对刚刚创建的文件进行编辑。</p>
-<h3 id="4-生成博客内容"><a href="#4-生成博客内容" class="headerlink" title="4. 生成博客内容"></a>4. 生成博客内容</h3><p>使用Hexo生成静态博客异常的简单，仅仅需要如下命令即可：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo generate</span><br></pre></td></tr></table></figure>
-<p>如果觉得命令太长，也可以简化为：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br></pre></td></tr></table></figure>
-<p>执行完该命令之后，Hexo会将生成的静态文件放在<code>public</code>文件夹下。</p>
-<h3 id="5-本地调试"><a href="#5-本地调试" class="headerlink" title="5. 本地调试"></a>5. 本地调试</h3><p>编写完博客，并且生成内容之后，需要在本地调试一下，看看效果，这里需要安装<code>hexo-server</code></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-server --save</span><br></pre></td></tr></table></figure>
-<p>安装完成之后，输入以下命令启动服务器，网站会在 <code>http://localhost:4000</code> 下启动，服务器启动期间，Hexo 会监视文件变动并自动更新。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo server</span><br></pre></td></tr></table></figure>
-<p>这样就能在本地看到博客启动后的效果。</p>
-<h3 id="6-发布"><a href="#6-发布" class="headerlink" title="6. 发布"></a>6. 发布</h3><p>当上面所有操作都完成之后，就到了将博客发布的时候了，发布博客需要在配置文件中做一些简单的配置，这里以发布到<a href="https://pages.github.com" target="_blank" rel="noopener">Github Pages</a>为例：</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line"><span class="attr">  type:</span> <span class="string">git</span></span><br><span class="line"><span class="attr">  repo:</span> <span class="string">&lt;repository</span> <span class="string">url&gt;</span>    <span class="comment"># e.g https://github.com/kevinnerd/kevinnerd.github.io.git</span></span><br><span class="line"><span class="attr">  branch:</span> <span class="string">[branch]</span>          <span class="comment"># e.g master</span></span><br><span class="line"><span class="attr">  message:</span> <span class="string">[message]</span>        <span class="comment"># 自定义提交信息 (默认为 Site updated: &#123;&#123; now('YYYY-MM-DD HH:mm:ss') &#125;&#125;)</span></span><br></pre></td></tr></table></figure>
-<p>配置好之后，可以运行下面的命令将生成的静态文件发布到配置文件中指定的仓库</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo deploy # 也可以简化为 hexo d</span><br></pre></td></tr></table></figure>
-<p><code>deploy</code>命令有一个<code>-g</code>参数，可以在发布之前执行<code>generate</code>命令，这样可以用来简化发布博客的操作。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo d -g # or hexo g -d</span><br></pre></td></tr></table></figure>
-<p><strong>Warning</strong>: <code>Github Pages</code>要求仓库的名称必须以<code>&lt;username&gt;.github.io</code>这样的形式命名。</p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>这里的所有操作都可以在<a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="noopener">Hexo官网文档</a>中找到，我这里只是总结了搭建博客所需要了解的必要步骤，博客搭建成功之后还需要对语言，个人信息等配置项做个性化的修改，这里就不做赘述了，大家可以根据具体需求参考官方文档的说明。</p>
-
-          
+          <h1 id="开篇词"><a href="#开篇词" class="headerlink" title="开篇词"></a>开篇词</h1><p>个人一直认为，作为一个合格的开发人员，都应该有自己学习成长，积累知识的方式，不管是写一些知识总结，做一些技术分享，还是长期维护一个个人博客，这些都是成长的一种方式，作为自己个人博客站点的第一篇文章，这里就简单分享一下搭建整个博客的过程，其实使用<a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="noopener">Hexo</a>搭建博客非常简单，仅仅需要按照官网的步骤来做，很短时间内就可以搭建好一个个人博客站点。<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/08/23/使用Hexo快速搭建博客-1/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
